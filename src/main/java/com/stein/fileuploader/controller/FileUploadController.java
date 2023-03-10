@@ -51,9 +51,9 @@ public class FileUploadController {
         if (fileCount == 0) {
             path = Paths.get(directoryName, "0" + 1 + "-" + fileName);
         } else if (fileCount < 10) {
-            path = Paths.get(directoryName, "0" + fileCount + "-" + fileName);
+            path = Paths.get(directoryName, "0" + (fileCount + 1) + "-" + fileName);
         } else {
-            path = Paths.get(directoryName, fileCount + "-" + fileName);
+            path = Paths.get(directoryName, (fileCount + 1) + "-" + fileName);
         }
 
         Files.write(path, file.getBytes());
